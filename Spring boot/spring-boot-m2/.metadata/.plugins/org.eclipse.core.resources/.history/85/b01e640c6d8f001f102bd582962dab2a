@@ -1,0 +1,8 @@
+package com.qsp.spring_with_db;
+
+public class EmployeeDao {
+
+	public void saveEmployee(Employee employee) {
+		
+	}
+}

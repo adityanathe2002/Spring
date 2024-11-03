@@ -1,0 +1,21 @@
+package com.qsp.studentapp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.qsp.studentapp.dto.ResponseStructure;
+import com.qsp.studentapp.entity.Student;
+import com.qsp.studentapp.service.StudentService;
+
+@RestController
+public class StudentController {
+
+	@Autowired
+	private StudentService service;
+	
+	public ResponseEntity<ResponseStructure<Student>> saveStudent(@RequestBody Student student){
+		return service.saveStudent(student);
+	}
+}

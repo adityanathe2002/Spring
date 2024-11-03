@@ -1,0 +1,35 @@
+package com.qsp.studentapp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.qsp.studentapp.dao.StudentDao;
+import com.qsp.studentapp.dto.ResponseStructure;
+import com.qsp.studentapp.entity.Student;
+@Service
+public class StudentService {
+	@Autowired
+	private StudentDao dao;
+	
+	public ResponseEntity<ResponseStructure<Student>> saveStudent(Student student){
+		Student returnedStudent=dao.saveStudent(student);
+		ResponseStructure<Student> structure=new ResponseStructure<Student>();
+		structure.setStatusCode(HttpStatus.CREATED.value());
+		structure.setMessage("created");
+		structure.setData(returnedStudent);
+		return new ResponseEntity<ResponseStructure<Student>>(structure,HttpStatus.CREATED);
+	}
+	
+	public ResponseEntity<ResponseStructure<Student>>  findById(int id){
+		Student student=dao.findById(id);
+		ResponseStructure<Student> structure=new ResponseStructure<Student>();
+		structure.setStatusCode(HttpStatus.OK.value());
+		structure.setMessage("created");
+		structure.setData(student);
+		return new ResponseEntity<ResponseStructure<Student>>(structure,HttpStatus.OK);
+
+	}
+	
+}

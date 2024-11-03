@@ -1,0 +1,5 @@
+package com.qsp.studentapp.dao;
+
+public class StudentDao {
+
+}

@@ -1,0 +1,5 @@
+package com.qsp.studentapp.repository;
+
+public interface StudentRepository {
+
+}

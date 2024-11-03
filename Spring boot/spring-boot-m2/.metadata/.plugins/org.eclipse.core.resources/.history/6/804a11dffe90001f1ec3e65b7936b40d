@@ -1,0 +1,5 @@
+package com.qsp.studentapp.dto;
+
+public class ResponseStructure {
+
+}

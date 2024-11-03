@@ -1,0 +1,14 @@
+package com.qsp.studentapp.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.qsp.studentapp.dto.ResponseStructure;
+@ControllerAdvice
+public class StudentException {
+	@ExceptionHandler(StudentNullValueException.class)
+	public ResponseEntity<ResponseStructure<String>> studentNullValue(){
+		
+	}
+}

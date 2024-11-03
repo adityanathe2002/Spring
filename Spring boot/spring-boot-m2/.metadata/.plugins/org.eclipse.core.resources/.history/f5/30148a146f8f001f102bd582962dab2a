@@ -1,0 +1,28 @@
+package com.qsp.spring_with_db;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	EmployeeDao dao;
+
+	@PostMapping("/emp")
+	public Employee saveEmployee(Employee employee) {
+		return dao.saveEmployee(employee);
+	}
+	
+	@PutMapping("/emp")
+	public Employee updateEmployee(Employee employee) {
+		return dao.updateEmployee(employee);
+	}
+	@GetMapping("/emp")
+	public Employee findEmpoyeeById(int id) {
+		return dao.findEmployeeById(id);
+	}
+}

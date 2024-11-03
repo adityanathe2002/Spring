@@ -1,0 +1,5 @@
+package com.qsp.studentapp.entity;
+
+public class Student {
+
+}

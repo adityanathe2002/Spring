@@ -1,0 +1,13 @@
+package com.qsp.spring_with_db.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qsp.spring_with_db.dao.EmployeeDao;
+@Service
+public class EmployeeService {
+
+	@Autowired
+	EmployeeDao dao;
+	
+}

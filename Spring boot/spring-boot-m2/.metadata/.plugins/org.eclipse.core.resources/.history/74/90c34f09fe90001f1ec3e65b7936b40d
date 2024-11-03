@@ -1,0 +1,18 @@
+package com.qsp.studentapp.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.qsp.studentapp.entity.Student;
+import com.qsp.studentapp.repository.StudentRepository;
+
+@Repository
+public class StudentDao {
+
+	@Autowired
+	private StudentRepository repository;
+	
+	public Student saveStudent(Student student) {
+		return repository.save(student);
+	}
+}
